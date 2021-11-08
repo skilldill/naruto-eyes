@@ -1,0 +1,8 @@
+.ball {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    background-color: #c20000;
+    border-radius: 30px;
+    z-index: 100;
+}

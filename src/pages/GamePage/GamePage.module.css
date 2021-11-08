@@ -12,11 +12,16 @@
 .container {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all 1s;
     transform: translateX(0px);
     animation: fadeIn 1s linear 0s;
+}
+
+.container h2 {
+    color: #fff;
 }
 
 .itachi {
