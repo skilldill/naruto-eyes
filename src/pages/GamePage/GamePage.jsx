@@ -38,18 +38,25 @@ export const GamePage = () => {
             <div className={styles.container}>
                 <h2>{scores}</h2>
                 <div className={styles.itachi}>
-                    <div 
-                        className={`${styles.eye} ${styles.eyeLeft}`} 
-                        style={{transform: `translate(${translateX}px, ${translateY}px)`}} 
-                    >
-                        <div className={styles.eyeInner}></div>
+                    <div className={`${styles.eyeWhite} ${styles.eyeWhiteLeft}`}>
+                        <div 
+                            className={`${styles.eye} ${styles.eyeLeft}`} 
+                            style={{transform: `translate(${translateX}px, ${translateY}px)`}} 
+                        >
+                            <div className={styles.eyeInner}></div>
+                        </div>
                     </div>
-                    <div 
-                        className={`${styles.eye} ${styles.eyeRight}`} 
-                        style={{transform: `translate(${translateX}px, ${translateY}px)`}} 
-                    >
-                        <div className={styles.eyeInner}></div>
+
+                    <div className={`${styles.eyeWhite} ${styles.eyeWhiteRight}`}>
+                        <div 
+                            className={`${styles.eye} ${styles.eyeRight}`} 
+                            style={{transform: `translate(${translateX}px, ${translateY}px)`}} 
+                        >
+                            <div className={styles.eyeInner}></div>
+                        </div>
                     </div>
+                    
+                    
                 </div>
             </div>
         </>

@@ -37,11 +37,34 @@
     background-position: center;
 }
 
+.eyeWhite {
+    position: absolute;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.eyeWhiteLeft {
+    width: 226px;
+    height: 78px;
+    left: 192px;
+    top: 378px;
+    mask: url(../../assets/eye-left.svg);
+}
+
+.eyeWhiteRight {
+    width: 218px;
+    height: 72px;
+    right: 218px;
+    top: 381px;
+    mask: url(../../assets/eye-right.svg);
+}
+
 .eye {
     position: absolute;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, #000000 100%);
-    height: 50px;
-    width: 50px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.43) 100%);
+    height: 100px;
+    width: 100px;
     border-radius: 70px;
     display: flex;
     justify-content: center;
@@ -56,11 +79,11 @@
 }
 
 .eyeLeft {
-    top: 390px;
-    left: 270px;
+    bottom: 0px;
+    left: 50px;
 }
 
 .eyeRight {
-    top: 390px;
-    right: 305px;
+    bottom: 0px;
+    right: 70px;
 }
