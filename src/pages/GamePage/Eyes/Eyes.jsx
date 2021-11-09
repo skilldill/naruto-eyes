@@ -15,7 +15,7 @@ export const Eyes = ({type = 'default'}) => {
     const eyesStyles = {
         'default': [`${styles.eye} ${styles.eyeLeft}`, `${styles.eye} ${styles.eyeRight}`],
         'uchiha': [`${styles.eye} ${styles.eyeLeft} ${styles.eyeSharingan}`, `${styles.eye} ${styles.eyeRight} ${styles.eyeSharingan}`],
-        'kakashi': [`${styles.eye} ${styles.eyeLeft} ${styles.eyeSharingan}`, `${styles.eye} ${styles.eyeRight}`],
+        'kakashi': [`${styles.eye} ${styles.eyeLeft}`, `${styles.eye} ${styles.eyeRight} ${styles.eyeSharingan}`],
     }
 
     return (

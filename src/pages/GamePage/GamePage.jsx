@@ -11,7 +11,7 @@ export const GamePage = () => {
     const [balls, setBalls] = useState([]);
     const [scores, setScores] = useState(0);
 
-    const [active, setActive] = useState('');
+    const [eyeType, setEyeType] = useState('default');
 
     useEffect(() => {
         // const interval = setInterval(() => {
@@ -34,7 +34,20 @@ export const GamePage = () => {
             ))}
             <div className={styles.container}>
                 {/* <h2>{scores}</h2> */}
-                <Eyes />
+                <div className={styles.eyeBlock}>
+                    <Eyes type={eyeType} />
+                </div>
+                <ul className={styles.controls}>
+                    <li onClick={() => setEyeType('default')}>
+                        <span>Standart</span>
+                    </li>
+                    <li onClick={() => setEyeType('uchiha')}>
+                        <span>Sharingan</span>
+                    </li>
+                    <li onClick={() => setEyeType('kakashi')}>
+                        <span>Kakashi</span>
+                    </li>
+                </ul>
             </div>
         </>
     )

@@ -12,12 +12,40 @@
 .container {
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     transition: all 1s;
     transform: translateX(0px);
     animation: fadeIn 1s linear 0s;
+}
+
+.eyeBlock {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    padding: 0;
+    margin: 0;
+    flex: .3;
+    border-left: 1px solid #e0e0e0;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.controls li {
+    padding-left: 50px;
+    text-align: start;
+    margin-bottom: 170px;
+    cursor: pointer;
+}
+
+.controls span {
+    font-size: 40px;
+    color: #fff;
 }
 
 .container h2 {
