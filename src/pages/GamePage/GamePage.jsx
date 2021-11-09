@@ -13,8 +13,8 @@ export const GamePage = () => {
 
     useEffect(() => {
         document.addEventListener('mousemove', (event) => {
-            setTranslateX(event.clientX * 0.01);
-            setTranslateY(event.clientY * 0.009);
+            setTranslateX(event.clientX * 0.025);
+            setTranslateY(event.clientY * 0.01);
         })
 
         const interval = setInterval(() => {
@@ -43,7 +43,14 @@ export const GamePage = () => {
                             className={`${styles.eye} ${styles.eyeLeft}`} 
                             style={{transform: `translate(${translateX}px, ${translateY}px)`}} 
                         >
-                            <div className={styles.eyeInner}></div>
+                            <div className={styles.eyeInnerLine}>
+                                <div className={styles.eyeInner}></div>
+                                
+                                <div className={`${styles.eyeTamoe} ${styles.eyeTamoeLeft}`} />
+                                <div className={`${styles.eyeTamoe} ${styles.eyeTamoeRight}`} />
+                                <div className={`${styles.eyeTamoe} ${styles.eyeTamoeTop}`} />
+                            </div>
+
                         </div>
                     </div>
 
@@ -52,7 +59,14 @@ export const GamePage = () => {
                             className={`${styles.eye} ${styles.eyeRight}`} 
                             style={{transform: `translate(${translateX}px, ${translateY}px)`}} 
                         >
-                            <div className={styles.eyeInner}></div>
+                            <div className={styles.eyeInnerLine}>
+                                <div className={styles.eyeInner}></div>
+
+                                <div className={`${styles.eyeTamoe} ${styles.eyeTamoeLeft}`} />
+                                <div className={`${styles.eyeTamoe} ${styles.eyeTamoeRight}`} />
+                                <div className={`${styles.eyeTamoe} ${styles.eyeTamoeTop}`} />
+                            </div>
+                            
                         </div>
                     </div>
                     

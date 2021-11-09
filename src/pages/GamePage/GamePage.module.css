@@ -22,6 +22,7 @@
 
 .container h2 {
     color: #fff;
+    user-select: none;
 }
 
 .itachi {
@@ -62,13 +63,35 @@
 
 .eye {
     position: absolute;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.43) 100%);
+    background: radial-gradient(50% 50% at 50% 50%, #FF0000 0%, #9A0000 83.82%, #000000 100%);
     height: 100px;
     width: 100px;
     border-radius: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.eyeInnerLine {
+    position: relative;
+    height: 55px;
+    width: 55px;
+    border-radius: 55px;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 15s linear 0s infinite;
 }
 
 .eyeInner {
@@ -79,11 +102,36 @@
 }
 
 .eyeLeft {
-    bottom: 0px;
+    bottom: 10px;
     left: 50px;
 }
 
 .eyeRight {
-    bottom: 0px;
+    bottom: 10px;
     right: 70px;
+}
+
+.eyeTamoe {
+    position: absolute;
+    width: 13px;
+    height: 18px;
+    background-color: #000;
+    mask: url(../../assets/tamoe.svg);
+}
+
+.eyeTamoeLeft {
+    bottom: 3px;
+    left: -5px;
+    transform: rotate(93deg);
+}
+
+.eyeTamoeRight {
+    bottom: 9px;
+    right: -8px;
+    transform: rotate(-45deg);
+}
+
+.eyeTamoeTop {
+    top: -12px;
+    transform: rotate(207deg);
 }
