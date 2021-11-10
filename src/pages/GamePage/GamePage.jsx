@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import {Ball} from "./Ball";
 import {Eyes} from "./Eyes";
 import {ballsFactory} from "./ballsFactory";
+import {Itachi} from "./Itachi";
 import styles from "./GamePage.module.css";
 
 export const GamePage = () => {
@@ -11,7 +12,7 @@ export const GamePage = () => {
     const [balls, setBalls] = useState([]);
     const [scores, setScores] = useState(0);
 
-    const [eyeType, setEyeType] = useState('default');
+    const [eyeType, setEyeType] = useState('rinengan');
 
     useEffect(() => {
         // const interval = setInterval(() => {
@@ -35,7 +36,8 @@ export const GamePage = () => {
             <div className={styles.container}>
                 {/* <h2>{scores}</h2> */}
                 <div className={styles.eyeBlock}>
-                    <Eyes type={eyeType} />
+                    {/* <Eyes type={eyeType} /> */}
+                    <Itachi />
                 </div>
                 <ul className={styles.controls}>
                     <li onClick={() => setEyeType('default')}>

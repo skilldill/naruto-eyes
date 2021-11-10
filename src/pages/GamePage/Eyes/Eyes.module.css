@@ -8,7 +8,7 @@
     opacity: .9;
     width: 1064px;
     height: 798px;
-    background-image: url(../../../assets/eye-active.png);
+    /* background-image: url(../../../assets/eye-active.png); */
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -53,6 +53,13 @@
 
 .eyeSharingan {
     background: radial-gradient(50% 50% at 50% 50%, #FF0000 0%, #9A0000 83.82%, #000000 100%);
+}
+
+.eyeRinengan {
+    background-image: url(../../../assets/rinengan.svg);
+    height: 400px;
+    width: 400px;
+    transform: translate(-300px, -300px);
 }
 
 @keyframes spin {

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styles from "./Eyes.module.css";
 
-export const Eyes = ({type = 'default'}) => {
+export const Eyes = ({type = 'default', rotate=true}) => {
     const [translateX, setTranslateX] = useState(0);
     const [translateY, setTranslateY] = useState(0);
 
@@ -22,7 +22,7 @@ export const Eyes = ({type = 'default'}) => {
         <div className={styles.container}>
             <div 
                 className={styles.itachi}
-                style={{transform: `rotateX(${(-translateY + 700) * 0.03}deg) rotateY(${((translateX - 900) * 0.01)}deg)`}}
+                style={{transform: `rotateX(${(-translateY + 700) * (rotate ? 0.03 : 0)}deg) rotateY(${((translateX - 900) * (rotate ? 0.01 : 0))}deg)`}}
             >
                 <div className={`${styles.eyeWhite} ${styles.eyeWhiteLeft}`}>
                     <div 

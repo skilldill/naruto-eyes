@@ -1,0 +1,17 @@
+.itachi {
+    position: relative;
+    width: 256.5px;
+    height: 471.5px;
+    background-image: url(../../../assets/full-itachi.png);
+}
+
+.itachiEyes {
+    display: flex;
+    align-items: center;
+    /* width: 50px; */
+    overflow: hidden;
+    zoom: 0.2;
+    position: absolute;
+    top: 408px;
+    left: 240px;
+}
