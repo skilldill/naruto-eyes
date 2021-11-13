@@ -18,11 +18,28 @@
 }
 
 .eyeBlock {
+    position: relative;
     flex: 1;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.itachiBlock {
+    position: absolute;
+    z-index: 10;
+}
+
+.fullEyeBlock {
+    top: -150px;
+    position: absolute;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.fullEyeBlockActive {
+    opacity: 1;
 }
 
 .controls {

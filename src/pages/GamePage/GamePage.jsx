@@ -6,6 +6,8 @@ import {ballsFactory} from "./ballsFactory";
 import {Itachi} from "./Itachi";
 import styles from "./GamePage.module.css";
 
+import {Suriken} from "./Suriken";
+
 export const GamePage = () => {
     
     
@@ -13,6 +15,8 @@ export const GamePage = () => {
     const [scores, setScores] = useState(0);
 
     const [eyeType, setEyeType] = useState('default');
+
+    const [sharinganActive, setSharinganActive] = useState(false);
 
     useEffect(() => {
         // const interval = setInterval(() => {
@@ -27,10 +31,12 @@ export const GamePage = () => {
 
     const handleJutsu = (active) => {
         if (active) {
+            setSharinganActive(true);
             setEyeType('uchiha');
             return;
         }
 
+        setSharinganActive(false);
         setEyeType('default');
         return;
     }
@@ -45,12 +51,16 @@ export const GamePage = () => {
             ))}
             <div className={styles.container}>
                 {/* <h2>{scores}</h2> */}
+                <Suriken from={{x: 100, y: 50}} to={{x: 1000, y: 100}} slow={sharinganActive} />
+                <Suriken from={{x: 250, y: 700}} to={{x: 1500, y: 100}} slow={sharinganActive} />
+                <Suriken from={{x: 0, y: 600}} to={{x: 1200, y: 500}} slow={sharinganActive} />
                 <div className={styles.eyeBlock}>
-                    {/* <div>
+                    <div className={`${styles.fullEyeBlock} ${sharinganActive ? styles.fullEyeBlockActive : ''}`}>
                         <Eyes type={eyeType} />
-                        <Itachi eyeType={eyeType} />
-                    </div> */}
-                    <Itachi eyeType={eyeType} onActive={handleJutsu} />
+                    </div>
+                    <div className={styles.itachiBlock}>
+                        <Itachi eyeType={eyeType} onActive={handleJutsu} />
+                    </div>
                 </div>
                 {/* <ul className={styles.controls}>
                     <li onClick={() => setEyeType('default')}>

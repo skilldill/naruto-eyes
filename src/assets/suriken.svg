@@ -1,0 +1,8 @@
+<svg width="496" height="496" viewBox="0 0 496 496" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 248.487L163 163L248.487 0.999936L333 163L495.975 248.487L333 333L248.487 495.975L163 333L1 248.487Z" fill="#C4C4C4"/>
+<path d="M248 1L333 163L496 248L287 207.5L248 1Z" fill="#858585" fill-opacity="0.71"/>
+<path d="M495 248L333 333L248 496L288.5 287L495 248Z" fill="#858585" fill-opacity="0.71"/>
+<path d="M1 248L163 163L248 0L207.5 209L1 248Z" fill="#E0E0E0" fill-opacity="0.71"/>
+<path d="M248 495L163 333L0 248L209 288.5L248 495Z" fill="#E0E0E0" fill-opacity="0.71"/>
+<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="0.5s" repeatCount="indefinite" />
+</svg>
