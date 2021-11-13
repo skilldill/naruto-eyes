@@ -12,7 +12,7 @@ export const GamePage = () => {
     const [balls, setBalls] = useState([]);
     const [scores, setScores] = useState(0);
 
-    const [eyeType, setEyeType] = useState('rinengan');
+    const [eyeType, setEyeType] = useState('default');
 
     useEffect(() => {
         // const interval = setInterval(() => {
@@ -25,6 +25,16 @@ export const GamePage = () => {
         // }
     }, [])
 
+    const handleJutsu = (active) => {
+        if (active) {
+            setEyeType('uchiha');
+            return;
+        }
+
+        setEyeType('default');
+        return;
+    }
+
     return (
         <>
             {balls.map((ball, i) => (
@@ -36,13 +46,13 @@ export const GamePage = () => {
             <div className={styles.container}>
                 {/* <h2>{scores}</h2> */}
                 <div className={styles.eyeBlock}>
-                    <div>
+                    {/* <div>
                         <Eyes type={eyeType} />
                         <Itachi eyeType={eyeType} />
-                    </div>
-                    {/* <Itachi eyeType={eyeType} /> */}
+                    </div> */}
+                    <Itachi eyeType={eyeType} onActive={handleJutsu} />
                 </div>
-                <ul className={styles.controls}>
+                {/* <ul className={styles.controls}>
                     <li onClick={() => setEyeType('default')}>
                         <span>Standart</span>
                     </li>
@@ -52,7 +62,7 @@ export const GamePage = () => {
                     <li onClick={() => setEyeType('kakashi')}>
                         <span>Kakashi</span>
                     </li>
-                </ul>
+                </ul> */}
             </div>
         </>
     )

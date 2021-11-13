@@ -5,6 +5,10 @@
     background-image: url(../../../assets/full-itachi.png);
 }
 
+.itachiActive {
+    background-image: url(../../../assets/full-itachi-jutsu.png);
+}
+
 .itachiEyes {
     display: flex;
     align-items: center;
