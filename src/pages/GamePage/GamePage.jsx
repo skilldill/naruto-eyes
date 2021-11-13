@@ -40,6 +40,7 @@ export const GamePage = () => {
                         <Eyes type={eyeType} />
                         <Itachi eyeType={eyeType} />
                     </div>
+                    {/* <Itachi eyeType={eyeType} /> */}
                 </div>
                 <ul className={styles.controls}>
                     <li onClick={() => setEyeType('default')}>
