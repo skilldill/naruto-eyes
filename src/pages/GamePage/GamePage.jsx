@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-import {Ball} from "./Ball";
 import {Eyes} from "./Eyes";
-import {ballsFactory} from "./ballsFactory";
 import {Itachi} from "./Itachi";
 import styles from "./GamePage.module.css";
 
 import {Suriken} from "./Suriken";
+import { getSuriken } from "./factories";
 
 export const GamePage = () => {
     
     
-    const [balls, setBalls] = useState([]);
+    const [surikens, setSurikens] = useState([]);
     const [scores, setScores] = useState(0);
 
     const [eyeType, setEyeType] = useState('default');
@@ -27,6 +26,15 @@ export const GamePage = () => {
         // return () => {
         //     clearInterval(interval);
         // }
+
+        const interval = setInterval(() => {
+            const suriken = getSuriken();
+            setSurikens((surikens) => [...surikens, suriken]);
+        }, 500)
+
+        return () => {
+            clearInterval(interval);
+        }
     }, [])
 
     const handleJutsu = (active) => {
@@ -43,17 +51,15 @@ export const GamePage = () => {
 
     return (
         <>
-            {balls.map((ball, i) => (
-                <Ball 
-                    key={i} {...ball} 
+            {surikens.map((suriken, i) => (
+                <Suriken 
+                    key={i} {...suriken} 
+                    slow={sharinganActive}
                     onClick={() => {setScores(scores + 1)}} 
                 />
             ))}
             <div className={styles.container}>
                 {/* <h2>{scores}</h2> */}
-                <Suriken from={{x: 100, y: 50}} to={{x: 1000, y: 100}} slow={sharinganActive} />
-                <Suriken from={{x: 250, y: 700}} to={{x: 1500, y: 100}} slow={sharinganActive} />
-                <Suriken from={{x: 0, y: 600}} to={{x: 1200, y: 500}} slow={sharinganActive} />
                 <div className={styles.eyeBlock}>
                     <div className={`${styles.fullEyeBlock} ${sharinganActive ? styles.fullEyeBlockActive : ''}`}>
                         <Eyes type={eyeType} />

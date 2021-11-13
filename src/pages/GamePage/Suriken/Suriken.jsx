@@ -4,9 +4,9 @@ import styles from "./Suriken.module.css";
 import SurikenSVG from "../../../assets/suriken.svg";
 import SurikenSlowSVG from "../../../assets/suriken-slow.svg";
 
-const SECONDS = 5;
+const SECONDS = 2;
 
-export const Suriken = ({from, to, slow = false}) => {
+export const Suriken = ({from, to, onClick, slow = false}) => {
 
     const [translate, setTranslate] = useState(from);
     const deltaX = (to.x - from.x) / SECONDS;
@@ -38,6 +38,7 @@ export const Suriken = ({from, to, slow = false}) => {
 
     return (
         <div 
+            onClick={onClick}
             className={styles.suriken}
             style={{
                 transform: `translate(${translate.x}px, ${translate.y}px)`,
