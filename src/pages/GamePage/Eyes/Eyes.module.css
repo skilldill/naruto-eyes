@@ -8,7 +8,7 @@
     opacity: .9;
     width: 1064px;
     height: 798px;
-    /* background-image: url(../../../assets/eye-active.png); */
+    background-image: url(../../../assets/eye.png);
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -17,6 +17,7 @@
 }
 
 .eyeWhite {
+    box-shadow: 10px 0 15px #000;
     position: absolute;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -24,18 +25,18 @@
 }
 
 .eyeWhiteLeft {
-    width: 226px;
-    height: 78px;
-    left: 192px;
-    top: 378px;
+    width: 219px;
+    height: 107px;
+    left: 210px;
+    top: 365px;
     mask: url(../../../assets/eye-left.svg);
 }
 
 .eyeWhiteRight {
-    width: 218px;
-    height: 72px;
-    right: 218px;
-    top: 381px;
+    width: 219px;
+    height: 107px;
+    right: 210px;
+    top: 365px;
     mask: url(../../../assets/eye-right.svg);
 }
 
