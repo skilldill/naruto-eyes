@@ -15,7 +15,7 @@ export const Suriken = ({from, to, onClick, slow = false}) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setTranslate((current) => {
-                if (current.x === to.x) {
+                if (current.y === to.y) {
                     return current;
                 }
 
@@ -35,6 +35,10 @@ export const Suriken = ({from, to, onClick, slow = false}) => {
 
         return () => clearInterval(interval);
     }, [slow, to])
+
+    if (translate.y >= to.y) {
+        return null;
+    }
 
     return (
         <div 

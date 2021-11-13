@@ -29,6 +29,7 @@
 .itachiBlock {
     position: absolute;
     z-index: 10;
+    bottom: 100px;
 }
 
 .fullEyeBlock {

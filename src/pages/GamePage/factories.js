@@ -13,19 +13,19 @@ export function ballsFactory() {
 }
 
 export function getSuriken() {
-    
-
     const suriken = {
         from: {
-            x: getRandomInt(window.innerWidth),
-            y: -getRandomInt(window.innerHeight),
+            x: window.innerWidth / (getRandomInt(10) + 1),
+            y: -100,
         },
 
         to: {
-            x: getRandomInt(window.innerWidth) + 1000,
-            y: getRandomInt(window.innerHeight) + 1000
+            x: getRandomInt(window.innerWidth),
+            y: getRandomInt(window.innerHeight) + 2000
         }
     }
+
+    console.log(suriken);
 
     return suriken;
 }

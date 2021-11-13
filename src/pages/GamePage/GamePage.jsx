@@ -29,7 +29,9 @@ export const GamePage = () => {
 
         const interval = setInterval(() => {
             const suriken = getSuriken();
-            setSurikens((surikens) => [...surikens, suriken]);
+            setSurikens((surikens) => {
+                return [...surikens, suriken];
+            });
         }, 500)
 
         return () => {
