@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import {Eyes} from "./Eyes";
 import {Itachi} from "./Itachi";
+import {GameData} from "./GameData";
 import styles from "./GamePage.module.css";
 
 import {Suriken} from "./Suriken";
@@ -44,8 +45,10 @@ export const GamePage = ({onGameOver}) => {
     
 
     useEffect(() => {
+        let interval;
+
         if (sharinganActive) {
-            const interval = setInterval(() => {
+            interval = setInterval(() => {
                 setSharinganScores((scores) => {
                     if (scores > 0) {
                         return scores - 1;
@@ -55,6 +58,8 @@ export const GamePage = ({onGameOver}) => {
                 })
             }, 1000)
         }
+
+        return () => clearInterval(interval);
     }, [sharinganActive])
 
     if (sharinganScores === 0) {
@@ -79,6 +84,14 @@ export const GamePage = ({onGameOver}) => {
                     </div>
                     <div className={styles.itachiBlock}>
                         <Itachi eyeType={eyeType} onActive={handleJutsu} />
+                    </div>
+                    <div className={styles.gameData}>
+                        <GameData 
+                            scores={scores} 
+                            helthPoints={sharinganScores}
+                            gameTime={120}
+                            onFinish={onGameOver}
+                        />
                     </div>
                 </div>
                 {/* <ul className={styles.controls}>

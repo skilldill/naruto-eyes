@@ -21,7 +21,7 @@ export function getSuriken() {
 
         to: {
             x: getRandomInt(window.innerWidth),
-            y: getRandomInt(window.innerHeight) + 2000
+            y: getRandomInt(window.innerHeight) + 3000
         }
     }
 

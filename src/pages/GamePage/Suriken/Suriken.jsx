@@ -5,8 +5,9 @@ const SECONDS = 2;
 const SLOW_COEF = 10;
 
 export const Suriken = ({from, to, onClick, slow = false}) => {
-
     const [translate, setTranslate] = useState(from);
+    const [pressed, setPressed] = useState(false);
+    
     const deltaX = (to.x - from.x) / SECONDS;
     const deltaY = (to.y - from.y) / SECONDS;
 
@@ -29,26 +30,29 @@ export const Suriken = ({from, to, onClick, slow = false}) => {
                     y: current.y + deltaY 
                 }
             })
-        }, 900)
+        }, 1900)
 
         return () => clearInterval(interval);
     }, [slow, to])
 
     const classes = slow ? `${styles.suriken} ${styles.surikenSlow}` : styles.suriken
+    
+    const handleClick = () => {
+        setPressed(true);
+        onClick();
+    }
 
-    if (translate.y >= to.y) {
+    if (translate.y >= to.y || pressed) {
         return null;
     }
 
-
-
     return (
         <div 
-            onClick={onClick}
+            onClick={handleClick}
             className={classes}
             style={{
                 transform: `translate(${translate.x}px, ${translate.y}px)`,
-                transition: `all 1s linear`
+                transition: `all 2s linear`
             }}
         >
         </div>

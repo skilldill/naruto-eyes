@@ -1,0 +1,23 @@
+.container {
+    text-align: left;
+}
+
+h3 {
+    color: #fff;
+    user-select: none;
+    margin: 0;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.helthPoints {
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
