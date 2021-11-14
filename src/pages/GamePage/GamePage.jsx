@@ -7,9 +7,7 @@ import styles from "./GamePage.module.css";
 import {Suriken} from "./Suriken";
 import { getSuriken } from "./factories";
 
-export const GamePage = () => {
-    
-    
+export const GamePage = ({onGameOver}) => {
     const [surikens, setSurikens] = useState([]);
     const [scores, setScores] = useState(0);
 
@@ -17,16 +15,9 @@ export const GamePage = () => {
 
     const [sharinganActive, setSharinganActive] = useState(false);
 
+    const [sharinganScores, setSharinganScores] = useState(20);
+
     useEffect(() => {
-        // const interval = setInterval(() => {
-        //     const ball = ballsFactory();
-        //     setBalls((balls) => [...balls, ball]);
-        // }, 500)
-
-        // return () => {
-        //     clearInterval(interval);
-        // }
-
         const interval = setInterval(() => {
             const suriken = getSuriken();
             setSurikens((surikens) => {
@@ -50,6 +41,26 @@ export const GamePage = () => {
         setEyeType('default');
         return;
     }
+    
+
+    useEffect(() => {
+        if (sharinganActive) {
+            const interval = setInterval(() => {
+                setSharinganScores((scores) => {
+                    if (scores > 0) {
+                        return scores - 1;
+                    }
+
+                    return 0;
+                })
+            }, 1000)
+        }
+    }, [sharinganActive])
+
+    if (sharinganScores === 0) {
+        onGameOver();
+    }
+        
 
     return (
         <>

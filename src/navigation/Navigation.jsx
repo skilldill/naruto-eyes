@@ -1,8 +1,14 @@
 import React, {useState} from "react";
-import { StartPage, GamePage } from "../pages";
+import { StartPage, GamePage, EndPage } from "../pages";
 
 export const Navigation = () => {
-    const [started, setStarted] = useState(false);
+    const [pageName, setPageName] = useState('start');
 
-    return started ? <GamePage /> : <StartPage onStart={() => setStarted(true)} />
+    const mapPages = {
+        'start': <StartPage onStart={() => setPageName('game')} />,
+        'game': <GamePage onGameOver={() => setPageName('end')} />,
+        'end': <EndPage onRestart={() => setPageName('game')} />
+    }
+
+    return mapPages[pageName];
 }

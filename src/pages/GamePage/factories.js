@@ -25,7 +25,5 @@ export function getSuriken() {
         }
     }
 
-    console.log(suriken);
-
     return suriken;
 }
