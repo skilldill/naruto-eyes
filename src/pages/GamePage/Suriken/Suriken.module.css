@@ -3,4 +3,10 @@
     height: 50px;
     z-index: 1000;
     position: absolute;
+    background-image: url(../../../assets/suriken.svg);
+    background-size: contain;
+}
+
+.surikenSlow {
+    background-image: url(../../../assets/suriken-slow.svg);
 }

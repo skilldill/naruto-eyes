@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react"; 
-
 import styles from "./Suriken.module.css";
-import SurikenSVG from "../../../assets/suriken.svg";
-import SurikenSlowSVG from "../../../assets/suriken-slow.svg";
 
 const SECONDS = 2;
+const SLOW_COEF = 10;
 
 export const Suriken = ({from, to, onClick, slow = false}) => {
 
@@ -21,8 +19,8 @@ export const Suriken = ({from, to, onClick, slow = false}) => {
 
                 if (slow) {
                     return { 
-                        x: current.x + deltaX / 3,
-                        y: current.y + deltaY / 3
+                        x: current.x + deltaX / SLOW_COEF,
+                        y: current.y + deltaY / SLOW_COEF
                     }
                 }
 
@@ -36,20 +34,23 @@ export const Suriken = ({from, to, onClick, slow = false}) => {
         return () => clearInterval(interval);
     }, [slow, to])
 
+    const classes = slow ? `${styles.suriken} ${styles.surikenSlow}` : styles.suriken
+
     if (translate.y >= to.y) {
         return null;
     }
 
+
+
     return (
         <div 
             onClick={onClick}
-            className={styles.suriken}
+            className={classes}
             style={{
                 transform: `translate(${translate.x}px, ${translate.y}px)`,
                 transition: `all 1s linear`
             }}
         >
-            <img src={slow ? SurikenSlowSVG : SurikenSVG} width={50} />
         </div>
     )
 }
